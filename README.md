@@ -31,6 +31,12 @@ Contoh payload dasar:
 ```html
 <script>alert1</script>
 ```
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss reflected" src="https://github.com/user-attachments/assets/49e73ae8-c3fd-48cd-8afc-1eb494e0ef47" />
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss reflected2" src="https://github.com/user-attachments/assets/97a78d22-c0fc-42c2-9a4c-8d370921c291" />
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss reflected3" src="https://github.com/user-attachments/assets/e858090a-4090-4a4f-b371-f5209dde7b07" />
+
+
+
 
 ### 4. Kesimpulan
 
@@ -58,12 +64,17 @@ Stored XSS adalah jenis serangan di mana penyerang menyisipkan kode berbahaya ke
 | **High**       | Filtering pola kata kunci yang mirip *script* | Sebagian besar payload diblokir, namun masih dapat diuji terhadap bypass berbasis encoding     |
 | **Impossible** | Validasi dan sanitasi optimal diterapkan      | Serangan tidak dapat dilakukan, input aman sebelum disimpan ke database                        |
 
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss stored" src="https://github.com/user-attachments/assets/8aaf7f2b-576a-4f37-b85d-baabda2a0897" />
+
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss stored2" src="https://github.com/user-attachments/assets/5b08fb33-cb4b-47f2-b1e8-d42687db4f29" />
+
+
 ### 3. Contoh Payload Pengujian
 
 Payload dasar yang digunakan:
 
 ```html
-<script>alert('Stored XSS')</script>
+<img src=x onerror=alert(1)>
 ```
 
 Hasil pada level **Low**:
@@ -75,6 +86,13 @@ Hasil pada level **Low**:
 * Penggunaan `strip_tags()` dapat mengurangi risiko, namun tidak sepenuhnya aman.
 * Membatasi panjang input (`maxlength`) membantu mengontrol data yang masuk.
 * `htmlspecialchars()` merupakan metode yang efektif untuk mengonversi karakter khusus menjadi entitas HTML â†’ script tidak akan dieksekusi dan hanya tampil sebagai teks.
+
+
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss stored3" src="https://github.com/user-attachments/assets/0a4c28fc-06f7-4373-879c-4af28ebff1f0" />
+
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss sroted4" src="https://github.com/user-attachments/assets/35cdd291-8cd5-4fc4-af5e-935b9ca58502" />
+
+
 
 ### 5. Kesimpulan
 
@@ -105,6 +123,14 @@ Karena serangan terjadi **tanpa interaksi server**, filter server-side *tidak cu
 | **High**       | Parameter dibatasi hanya pada nilai bahasa yang valid (mis. EN, FR, DE)       | Eksekusi script diblokir karena input tidak digunakan langsung dalam DOM            |
 | **Impossible** | Pengolahan parameter dilakukan menggunakan ID dan encoding aman               | Script tidak dapat dieksekusi, celah DOM XSS tertutup                               |
 
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss dom" src="https://github.com/user-attachments/assets/2fa5c5b3-1140-49d1-bff3-a607ebcf4468" />
+
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss dom2" src="https://github.com/user-attachments/assets/b245b5c1-ce36-4467-9d7c-276aba092e53" />
+
+
+
+
+
 ### 3. Contoh Payload Pengujian
 
 Payload dasar dimasukkan melalui parameter URL:
@@ -121,6 +147,12 @@ Pada level **Low**, halaman langsung memproses dan menampilkan nilai tersebut â†
 * Menggunakan `textContent` atau `innerText` untuk mencegah eksekusi script.
 * Validasi dan pembatasan nilai parameter terhadap daftar nilai yang diizinkan.
 * Encoding karakter menggunakan `encodeURIComponent()` atau `htmlspecialchars()` sebelum diproses di DOM.
+
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss dom3" src="https://github.com/user-attachments/assets/9e57e9c0-2838-46db-b1ac-ecaaef72abb6" />
+
+<img width="954" height="897" alt="VirtualBox_Kali Linux_xss dom4" src="https://github.com/user-attachments/assets/fbc80345-5c38-4d7a-831d-f4441906895d" />
+
+
 
 ### 5. Kesimpulan
 
