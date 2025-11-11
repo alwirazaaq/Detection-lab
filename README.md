@@ -2,7 +2,7 @@ XSS (Reflected, Stored, Dom)
 
 ## Laporan Pengujian Kerentanan Reflected XSS pada DVWA
 
-**Tujuan:**
+Tujuan:
 Melakukan pengujian kerentanan *Reflected Cross-Site Scripting (XSS)* pada aplikasi web DVWA dengan berbagai tingkat keamanan (Low, Medium, High, Impossible) untuk memahami bagaimana input pengguna dapat dimanipulasi dan bagaimana mitigasi diterapkan.
 
 ### 1. Deskripsi Singkat
